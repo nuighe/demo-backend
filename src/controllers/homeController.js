@@ -1,5 +1,19 @@
+const connection = require('../config/database');
+
+
 const getHomepage = (req, res) => {
-    res.send('hello world viet');
+
+    let user = [];
+
+    connection.query(
+        'SELECT * FROM users',
+        function (err, results, fields) {
+            user = results;
+            console.log("........results= ", results);
+
+            res.send(JSON.stringify(user));
+        }
+    );
 }
 
 const getHomename = (req, res) => {
