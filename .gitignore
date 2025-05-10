@@ -1,0 +1,3 @@
+// để không đẩy file có tên lên git
+node_modules
+.env
